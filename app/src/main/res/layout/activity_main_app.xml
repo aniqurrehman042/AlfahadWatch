@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainAppActivity"
+    android:background="@color/whiteSmoke">
+
+    <ImageView
+        android:id="@+id/iv_notification"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:src="@drawable/ic_notification"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_message"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:src="@drawable/ic_chat"
+        app:layout_constraintRight_toLeftOf="@id/iv_notification"
+        app:layout_constraintTop_toTopOf="@id/iv_notification" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_13sdp"
+        android:layout_height="@dimen/_11sdp"
+        app:layout_constraintRight_toLeftOf="@id/iv_message"
+        app:layout_constraintLeft_toLeftOf="@id/iv_message"
+        app:layout_constraintTop_toBottomOf="@id/iv_message"
+        app:layout_constraintBottom_toBottomOf="@id/iv_message"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="10dp"
+        android:outlineSpotShadowColor="@color/black"
+        android:outlineAmbientShadowColor="@color/black"
+        app:cardBackgroundColor="@color/golden"
+        android:translationY="-2dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:paddingHorizontal="@dimen/_3sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="@dimen/_6sdp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_13sdp"
+        android:layout_height="@dimen/_11sdp"
+        app:layout_constraintRight_toLeftOf="@id/iv_notification"
+        app:layout_constraintLeft_toLeftOf="@id/iv_notification"
+        app:layout_constraintTop_toBottomOf="@id/iv_notification"
+        app:layout_constraintBottom_toBottomOf="@id/iv_notification"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="10dp"
+        android:outlineSpotShadowColor="@color/black"
+        android:outlineAmbientShadowColor="@color/black"
+        app:cardBackgroundColor="@color/golden"
+        android:translationY="-2dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:paddingHorizontal="@dimen/_3sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_6sdp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bnv_bottom_bar"
+        app:layout_constraintTop_toBottomOf="@id/iv_notification"
+        android:layout_marginTop="@dimen/_7sdp"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bnv_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lightBlack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/menu_bottom_bar"
+        app:labelVisibilityMode="labeled"
+        app:itemIconTint="@drawable/selector_bottom_navigation_view"
+        app:itemTextColor="@drawable/selector_bottom_navigation_view"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
